@@ -1,0 +1,7 @@
+{
+  "$schema": "https://biomejs.dev/schemas/2.0.6/schema.json",
+  "extends": [
+    "ultracite"
+  ],
+  // Removed the unrecognized "rules" property to comply with the schema
+}

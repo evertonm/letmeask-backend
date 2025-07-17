@@ -1,9 +1,81 @@
 #Variables
 @baseUrl = http://localhost:3333
+@jwtToken = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjFhMzMwNTNlLTNkYmEtNDBhMS1hNzY4LWE4MTg3ZDQwMWQ4ZCIsInVzZXJuYW1lIjoiZXZlcnRvbiIsImlhdCI6MTc1MjQxNTA1NCwiZXhwIjoxNzUyNDE4NjU0fQ.Rvrk26SaI2GahqZWh18zsA9UW5Q3keafth233yd_nP4
 
 #Health check
+# @name healthCheck
 GET {{baseUrl}}/health
 ###
 
 #Get rooms
+# @name getRooms
 GET {{baseUrl}}/rooms
+Authorization: Bearer {{jwtToken}}
+###
+
+#Create room
+# @name createRoom
+POST {{baseUrl}}/rooms
+Accept: application/json
+Content-Type: application/json
+Authorization: Bearer {{jwtToken}}
+
+
+{
+  "name": "New Room",
+  "description": "This is a new room created via API"
+}
+
+###
+
+@roomId = {{createRoom.response.body.$.roomId}}
+
+###
+#Get room questions
+# @name getRoomQuestions
+GET {{baseUrl}}/rooms/{{roomId}}/questions
+Authorization: Bearer {{jwtToken}}
+
+
+###
+
+#Create question
+# @name createQuestion
+POST {{baseUrl}}/rooms/37af6844-eaf7-413b-8cb2-f9a53a24ad78/questions
+Accept: application/json
+Content-Type: application/json
+Authorization: Bearer {{jwtToken}}
+
+
+{
+  "question": "Como figueirense se tornou o maior clube do mundo?"
+}
+
+###
+
+#Create user
+# @name crateUser
+POST {{baseUrl}}/users/register
+Accept: application/json
+Content-Type: application/json
+
+{
+ "username": "everton11111111",
+ "firstName": "Everton",
+  "lastName": "Martins",
+  "email": "everton.martins111191119511111@gmail.com",
+ "password": "teste123"
+}
+
+###
+
+#Login user
+# @name loginUser
+POST {{baseUrl}}/users/login
+Accept: application/json
+Content-Type: application/json
+
+{
+ "username": "everton",
+ "password": "teste123"
+}

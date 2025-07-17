@@ -29,7 +29,7 @@ app.register(publicRoutes);
 app.register(privateRoutes);
 
 const port = Number(process.env.PORT) || 3000;
-
+console.log('Starting server on port', port);
 app.listen({ port }, (err) => {
   if (err) {
     console.error(err);

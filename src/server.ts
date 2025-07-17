@@ -6,9 +6,10 @@ import {
   validatorCompiler,
   type ZodTypeProvider,
 } from 'fastify-type-provider-zod';
-import { env } from './env.ts';
-import { privateRoutes } from './http/routes/private.ts';
-import { publicRoutes } from './http/routes/public.ts';
+import { env } from './env.js';
+import { privateRoutes } from './http/routes/private.js';
+import { publicRoutes } from './http/routes/public.js';
+import 'dotenv/config';
 
 const app = fastify().withTypeProvider<ZodTypeProvider>();
 

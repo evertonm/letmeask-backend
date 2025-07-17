@@ -4,8 +4,8 @@ import type { FastifyReply } from 'fastify';
 import type { FastifyRequest } from 'fastify/types/request.js';
 import type { FastifyPluginCallbackZod } from 'fastify-type-provider-zod';
 import { z } from 'zod';
-import { db } from '../../../db/connection.ts';
-import { users } from '../../../db/schema/user.ts';
+import { db } from '../../../db/connection.js';
+import { users } from '../../../db/schema/user.js';
 
 const registerSchema = z.object({
   username: z

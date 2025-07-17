@@ -1,6 +1,6 @@
 import type { FastifyReply, FastifyRequest } from 'fastify';
 import jwt from 'jsonwebtoken';
-import { getJwtSecret } from '../utils/jwt-key.ts';
+import { getJwtSecret } from '../utils/jwt-key.js';
 
 export const authMiddleware = async (
   request: FastifyRequest & { user?: string | jwt.JwtPayload },

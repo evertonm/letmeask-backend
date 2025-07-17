@@ -1,9 +1,9 @@
 //Barrel File
 
-import { audioChunks } from './audio-chunks.ts';
-import { questions } from './questions.ts';
-import { rooms } from './rooms.ts';
-import { users } from './user.ts';
+import { audioChunks } from './audio-chunks.js';
+import { questions } from './questions.js';
+import { rooms } from './rooms.js';
+import { users } from './user.js';
 
 export const schema = {
   rooms,

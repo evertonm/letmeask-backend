@@ -1,6 +1,6 @@
 import type { FastifyPluginCallbackZod } from 'fastify-type-provider-zod';
 import jwt from 'jsonwebtoken';
-import { getJwtSecret } from '../../../utils/jwt-key.ts';
+import { getJwtSecret } from '../../../utils/jwt-key.js';
 
 interface RefreshTokenProps {
   refreshToken: string;

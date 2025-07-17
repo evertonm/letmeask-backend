@@ -2,10 +2,10 @@ import bcrypt from 'bcrypt';
 import { eq } from 'drizzle-orm';
 import type { FastifyPluginCallbackZod } from 'fastify-type-provider-zod';
 import jwt from 'jsonwebtoken'; // Import correto para JWT
-import { db } from '../../../db/connection.ts';
-import { schema } from '../../../db/schema/index.ts';
-import { users } from '../../../db/schema/user.ts';
-import { getJwtSecret } from '../../../utils/jwt-key.ts';
+import { db } from '../../../db/connection.js';
+import { schema } from '../../../db/schema/index.js';
+import { users } from '../../../db/schema/user.js';
+import { getJwtSecret } from '../../../utils/jwt-key.js';
 
 interface LoginProps {
   username: string;

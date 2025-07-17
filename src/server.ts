@@ -28,4 +28,12 @@ app.get('/health', () => {
 app.register(publicRoutes);
 app.register(privateRoutes);
 
-app.listen({ port: env.PORT });
+app
+  .listen({ port: env.PORT })
+  .then(() => {
+    console.log(`Servidor rodando na porta ${env.PORT}`);
+  })
+  .catch((err) => {
+    console.error('Erro ao iniciar o servidor:', err);
+    process.exit(1);
+  });

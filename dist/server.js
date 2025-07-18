@@ -20,7 +20,7 @@ app.register(publicRoutes);
 app.register(privateRoutes);
 const port = Number(process.env.PORT) || 3000;
 console.log('Starting server on port', port);
-app.listen({ port }, (err) => {
+app.listen({ port, host: '0.0.0.0' }, (err) => {
     if (err) {
         console.error(err);
         process.exit(1);

@@ -9,7 +9,8 @@ import {
 import { env } from './env.js';
 import { privateRoutes } from './http/routes/private.js';
 import { publicRoutes } from './http/routes/public.js';
-import 'dotenv/config';
+
+console.log('Rodando com variáveis:', env);
 
 const app = fastify().withTypeProvider<ZodTypeProvider>();
 

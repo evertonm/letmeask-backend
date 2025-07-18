@@ -16,7 +16,7 @@ const app = fastify().withTypeProvider<ZodTypeProvider>();
 app.register(fastifyMultipart);
 
 app.register(fastifyCors, {
-  origin: 'http://localhost:5173',
+  origin: true,
 });
 app.setSerializerCompiler(serializerCompiler);
 app.setValidatorCompiler(validatorCompiler);
